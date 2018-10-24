@@ -3,15 +3,14 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
-import Firebase from 'firebase'
-import { MyApp } from './app.component';
-import { MediaCapture, MediaFile, CaptureError, CaptureImageOptions } from '@ionic-native/media-capture';
 
+import { MyApp } from './app.component';
+import { HomePage } from '../pages/home/home';
 
 @NgModule({
   declarations: [
     MyApp,
-   
+    HomePage
   ],
   imports: [
     BrowserModule,
@@ -20,16 +19,12 @@ import { MediaCapture, MediaFile, CaptureError, CaptureImageOptions } from '@ion
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    
-  
+    HomePage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    File, 
-    MediaCapture,
-    {provide: ErrorHandler, useClass: IonicErrorHandler},
-    
+    {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
 export class AppModule {}
